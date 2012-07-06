@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ChooseIt!</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	
+	<!-- Navigation Links -->
+	<% if user_signed_in? %>
+	Signed in as <%= current_user.email %>.
+	<%= link_to('My Account', edit_user_registration_path) %> |
+	<%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+	<% else %>
+	Not signed in.
+	<%= link_to('Login', new_user_session_path)  %> |
+	<%= link_to('Sign Up', new_user_registration_path) %>
+	<% end %>
+	
+	<!-- Flash Messages -->
+	<p class="notice"><%= notice %></p>
+	<p class="alert"><%= alert %></p>
+
+<%= yield %>
+
+</body>
+</html>
