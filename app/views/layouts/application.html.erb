@@ -11,6 +11,9 @@
 	<!-- Navigation Links -->
 	
 	<%= link_to('Home', root_path) %>
+	<%= link_to('Contact Us!', new_visitor_message_path)%>
+	
+	<!-- User Links -->
 	<% if user_signed_in? %>
 	Signed in as <%= current_user.email %>.
 	<%= link_to('My Account', edit_user_registration_path) %> |

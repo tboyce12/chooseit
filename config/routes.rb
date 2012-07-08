@@ -1,4 +1,8 @@
 Chooseit::Application.routes.draw do
+
+  resources :visitor_messages
+  # get 'contact' => 'VisitorMessages#new', :as => :visitor_messages_new
+  # post 'contact' => 'VisitorMessages#create', :as => :visitor_messages_create
   
   devise_scope :user do
     get 'sign_in', :to => 'users/sessions#new', :as => :new_user_session

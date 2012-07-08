@@ -1,0 +1,28 @@
+<h1>Contact Us</h1>
+<p>Fill out this form to send us an email with feature requests, suggestions, comments, etc. We would love your feedback!</p>
+
+<%= form_for @visitor_message do |f| %>
+  <% if @visitor_message.errors.any? %>
+    <div class="error_messages">
+      <h2><%= pluralize(@visitor_message.errors.count, "error") %> prohibited this message from being saved:</h2>
+      <ul>
+      <% @visitor_message.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :content, "Message (required)" %><br />
+    <%= f.text_area :content, :rows => 5 %>
+  </div>
+  <div class="actions"><%= f.submit "Send Message" %></div>
+<% end %>
