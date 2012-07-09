@@ -20,6 +20,13 @@
 
 <%- if devise_mapping.omniauthable? %>
   <%- resource_class.omniauth_providers.each do |provider| %>
+
+	<!-- Show special button for provider -->
+	<%- if provider.to_s.titleize == "Facebook" -%>
+	<%= link_to image_tag('http://choose_it_public.s3.amazonaws.com/assets/fb_button.png'), omniauth_authorize_path(resource_name, provider) %><br />
+	<%- else -%>
     <%= link_to "Sign in with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider) %><br />
+	<%- end -%>
+
   <% end -%>
 <% end -%>
