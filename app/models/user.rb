@@ -11,6 +11,8 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :provider, :uid
   # attr_accessible :title, :body
   
+  # Associations
+  has_many :tots
   
   
   # Find or create user when Facebook OAuth succeeds

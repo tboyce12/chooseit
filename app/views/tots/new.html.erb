@@ -1,0 +1,28 @@
+<h1>Create new choose-it</h1>
+
+<%= form_for(@tot, :url => tots_create_path) do |f| %>
+	
+	<!--Server-side errors, if any-->
+	<% if @tot.errors.any? %>
+		<div>
+			<h2><%= pluralize(@tot.errors.count, "error") %> prohibited this choose-it from being saved:</h2>
+			<ul>
+				<% @tot.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+	
+	<!--Form fields-->
+	<%= f.label :a, 'This text' %>
+	<%= f.text_field :a %><br/>
+	
+	<%= f.label :b, 'That text' %>
+	<%= f.text_field :b %><br/>
+	
+	<%= f.submit 'Create Choose It!'%><br/>
+	
+<% end %>
+
+<%= link_to 'Back', tots_index_path %>

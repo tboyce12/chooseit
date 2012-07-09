@@ -1,0 +1,32 @@
+<h1>My Choose Its</h1>
+
+<table>
+
+	<thead>
+		<tr>
+			<th>This</th>
+			<th>Votes</th>
+			<th>That</th>
+			<th>Votes</th>
+			<th><!--Show Link--></th>
+			<th><!--Destroy Link--></th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<% @tots.each do |tot| %>
+			<tr>
+				<td><%= tot.a %></td>
+				<td>tot.a_votes</td>
+				<td><%= tot.b %></td>
+				<td>tot.b_votes</td>
+				<td><%= link_to 'Show', tots_show_path(tot) %></td>
+				<td><%= link_to 'Destroy', tots_destroy_path(tot), :method => :delete %></td>
+			</tr>
+		<% end %>
+	</tbody>
+	
+</table>
+
+<br/>
+<%= link_to 'Create New Choose-It!', tots_new_path %>

@@ -1,5 +1,11 @@
 Chooseit::Application.routes.draw do
 
+  get 'tots'        => 'tots#index', :as   => :tots_index
+  get 'tots/new'    => 'tots#new', :as     => :tots_new
+  get 'tots/:id'    => 'tots#show', :as    => :tots_show
+  post 'tots'       => 'tots#create', :as  => :tots_create
+  delete 'tots/:id' => 'tots#destroy', :as => :tots_destroy
+
   resources :visitor_messages
   # get 'contact' => 'VisitorMessages#new', :as => :visitor_messages_new
   # post 'contact' => 'VisitorMessages#create', :as => :visitor_messages_create

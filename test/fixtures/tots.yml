@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  a: MyString
+  b: MyString
+  a_image: MyString
+  b_image: MyString
+
+two:
+  a: MyString
+  b: MyString
+  a_image: MyString
+  b_image: MyString
