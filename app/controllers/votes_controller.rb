@@ -10,7 +10,13 @@ class VotesController < ApplicationController
 
   def vote
     @tot = Tot.find_by_id_not_touched_by(params[:id], current_user)
-    # TODO create a vote for current_user and the specified tot and selection
+    @vote = Vote.new_from_hash({:user => current_user, :tot => @tot, :choice => params[:choice]})
+    
+    if @vote.save
+      flash[:notice] = "Successfully voted!"
+    else
+      flash[:alert] = "Error voting."
+    end
     redirect_to votes_random_path
   end
 end

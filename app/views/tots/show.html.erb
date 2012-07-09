@@ -1,6 +1,6 @@
 <h1>Show Details</h1>
 
-<b><%= @tot.a %>:</b> <%= pluralize(0, "vote") %><br/>
-<b><%= @tot.b %>:</b> <%= pluralize(0, "vote") %><br/>
+<b><%= @tot.a %>:</b> <%= pluralize(@tot.a_votes, "vote") %><br/>
+<b><%= @tot.b %>:</b> <%= pluralize(@tot.b_votes, "vote") %><br/>
 
 <%= link_to 'Back', tots_index_path %>

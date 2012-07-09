@@ -1,8 +1,21 @@
 class Tot < ActiveRecord::Base
   attr_accessible :a, :a_image, :b, :b_image
   belongs_to :user
+  has_many :votes, :dependent => :destroy
+  
+  validates_presence_of :a, :b
+  validates_length_of :a, :maximum => 30
+  validates_length_of :b, :maximum => 30
   
   scope :not_created_by, lambda { |user| {:conditions => ["user_id <> ?", user.id]} }
+  
+  # Methods for counting votes
+  def a_votes
+    votes.where("votes.choice = 'a'").length
+  end
+  def b_votes
+    votes.where("votes.choice = 'b'").length
+  end
   
   # Find the specified record, ensuring that it doesn't belong to user
   # and user hasn't voted on it

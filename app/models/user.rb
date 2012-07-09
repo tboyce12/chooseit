@@ -12,7 +12,8 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
   
   # Associations
-  has_many :tots
+  has_many :tots, :dependent => :destroy
+  has_many :votes, :dependent => :destroy
   
   
   # Find or create user when Facebook OAuth succeeds
