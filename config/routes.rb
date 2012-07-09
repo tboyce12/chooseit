@@ -1,5 +1,8 @@
 Chooseit::Application.routes.draw do
 
+  get 'vote'             => 'votes#random', :as => :votes_random
+  put 'vote/:id/:choice' => 'votes#vote', :as   => :votes_vote
+
   get 'tots'        => 'tots#index', :as   => :tots_index
   get 'tots/new'    => 'tots#new', :as     => :tots_new
   get 'tots/:id'    => 'tots#show', :as    => :tots_show
@@ -11,8 +14,8 @@ Chooseit::Application.routes.draw do
   # post 'contact' => 'VisitorMessages#create', :as => :visitor_messages_create
   
   devise_scope :user do
-    get 'sign_in', :to => 'users/sessions#new', :as => :new_user_session
-    get 'sign_out', :to => 'users/sessions#destroy', :as => :destroy_user_session
+    get 'sign_in', :to       => 'users/sessions#new', :as      => :new_user_session
+    get 'sign_out', :to      => 'users/sessions#destroy', :as  => :destroy_user_session
     delete "/users/sign_out" => "devise/sessions#destroy", :as => :destroy_user_session_omniauth
   end
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
