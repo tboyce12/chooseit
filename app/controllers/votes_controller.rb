@@ -4,7 +4,7 @@ class VotesController < ApplicationController
   def random
     @tot = Tot.find_random_not_touched_by(current_user)
     if @tot.nil?
-      redirect_to tots_index_path # TODO redirect to page saying no more tots
+      redirect_to welcome_invite_path
     end
   end
 

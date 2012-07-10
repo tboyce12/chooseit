@@ -22,6 +22,7 @@ Chooseit::Application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
   get "welcome/index"
+  get 'invite' => 'welcome#invite', :as => :welcome_invite
 
   root :to => "welcome#index"
   
