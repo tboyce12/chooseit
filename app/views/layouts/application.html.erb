@@ -8,23 +8,23 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	
+
 	<!-- Navigation Links -->
 	<div id="navcontainer">
-	<ul id="navlist">
-	<%- if user_signed_in? -%>
-	<%= render 'layouts/links_signed_in' %>
-	<%- else -%>
-	<%= render 'layouts/links_signed_out' %>
-	<%- end -%>
-	</ul>
+		<ul id="navlist">
+			<%- if user_signed_in? -%>
+			<%= render 'layouts/links_signed_in' %>
+			<%- else -%>
+			<%= render 'layouts/links_signed_out' %>
+			<%- end -%>
+		</ul>
 	</div>
-	
+
 	<!-- Flash Messages -->
 	<p class="notice"><%= notice %></p>
 	<p class="alert"><%= alert %></p>
 
-<%= yield %>
+	<%= yield %>
 
 </body>
 </html>
