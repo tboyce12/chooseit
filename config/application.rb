@@ -57,5 +57,16 @@ module Chooseit
     config.assets.version = '1.0'
     
     config.assets.initialize_on_precompile = false
+    
+    
+    # Host to use in mailer-generated URL's
+    config.action_mailer.default_url_options = { :host => 'chooseitgame.com' }
+    
+    # Mailer SMTP settings
+    config.action_mailer.smtp_settings = {
+      :address              => "smtpout.secureserver.net",
+      :user_name            => "info@chooseitgame.com",
+      :password             => "test12test"
+    }
   end
 end

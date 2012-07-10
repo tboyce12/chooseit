@@ -18,13 +18,6 @@ Chooseit::Application.configure do
   
   # Host to use in mailer-generated URL's
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
-  
-  # Mailer SMTP settings
-  config.action_mailer.smtp_settings = {
-    :address              => "smtpout.secureserver.net",
-    :user_name            => "info@chooseitgame.com",
-    :password             => "test12test"
-  }
 
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
