@@ -11,3 +11,12 @@
  *= require_self
  *= require_tree .
 */
+#nav-ul {
+	list-style-type: none;
+	height: 30px;
+	width: 800px;
+/*	margin: auto;*/
+}
+#nav-ul li {
+	float: left;
+}

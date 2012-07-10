@@ -10,8 +10,8 @@
 <body>
 
 	<!-- Navigation Links -->
-	<div id="navcontainer">
-		<ul id="navlist">
+	<div id="nav">
+		<ul id="nav-ul">
 			<%- if user_signed_in? -%>
 			<%= render 'layouts/links_signed_in' %>
 			<%- else -%>
@@ -19,11 +19,13 @@
 			<%- end -%>
 		</ul>
 	</div>
+	<br/>
 
 	<!-- Flash Messages -->
 	<p class="notice"><%= notice %></p>
 	<p class="alert"><%= alert %></p>
 
+	<br/>
 	<%= yield %>
 
 </body>

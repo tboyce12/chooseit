@@ -2,20 +2,20 @@
 <%= link_to image_tag('http://choose_it_public.s3.amazonaws.com/assets/root.png'), root_path %>
 </li>
 <li>
-<%= link_to 'Choose Now!', votes_random_path %>
+<%= link_to 'Choose Now!', votes_random_path %> |&nbsp
 </li>
 <li>
-<%= link_to 'My Stuff', tots_index_path %>
+<%= link_to 'My Stuff', tots_index_path %> |&nbsp
 </li>
 <li>
-<%= link_to 'Contact Us!', visitor_messages_new_path %>
+<%= link_to 'Contact Us!', visitor_messages_new_path %> |&nbsp
 </li>
 
 <li>
-	Signed in as <%= current_user.email %>.
+	Signed in as <%= current_user.email %>. |&nbsp
 </li>
 <li>
-<%= link_to 'My Account', edit_user_registration_path %>
+<%= link_to 'My Account', edit_user_registration_path %> |&nbsp
 </li>
 <li>
 <%- if user_omniauth_signed_in? -%>
