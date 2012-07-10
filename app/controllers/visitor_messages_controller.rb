@@ -7,9 +7,12 @@ class VisitorMessagesController < ApplicationController
     @visitor_message = VisitorMessage.new(params[:visitor_message])
     if @visitor_message.valid?
       VisitorMailer.message_email(@visitor_message).deliver
-      redirect_to root_url, notice: "Message sent! Thank you for contacting us."
+      redirect_to visitor_messages_thanks_path, notice: "Message sent! Thank you for contacting us."
     else
       render "new"
     end
+  end
+  
+  def thanks
   end
 end

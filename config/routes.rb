@@ -9,9 +9,10 @@ Chooseit::Application.routes.draw do
   post 'tots'       => 'tots#create', :as  => :tots_create
   delete 'tots/:id' => 'tots#destroy', :as => :tots_destroy
 
-  resources :visitor_messages
-  # get 'contact' => 'VisitorMessages#new', :as => :visitor_messages_new
-  # post 'contact' => 'VisitorMessages#create', :as => :visitor_messages_create
+  # resources :visitor_messages
+  get 'contact' => 'VisitorMessages#new', :as => :visitor_messages_new
+  post 'contact' => 'VisitorMessages#create', :as => :visitor_messages_create
+  get 'contact/thanks' => 'VisitorMessages#thanks', :as => :visitor_messages_thanks
   
   devise_scope :user do
     get 'sign_in', :to       => 'users/sessions#new', :as      => :new_user_session
