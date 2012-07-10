@@ -206,7 +206,13 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', :scope => 'user,public_repo'
-  config.omniauth :facebook, '153859971416055', '0121b071fed8246913acfd68ee2ffa5b', :client_options => {:ssl => {:ca_path => '/etc/ssl/certs'}}
+  if Rails.env.production?
+    # ChooseIt!
+    config.omniauth :facebook, '153859971416055', '0121b071fed8246913acfd68ee2ffa5b', :client_options => {:ssl => {:ca_path => '/etc/ssl/certs'}}
+  else
+    # tboyce-sandbox
+    config.omniauth :facebook, '389463307778206', '9a009fa2b62ce4b270f3aa703612bc1b', :client_options => {:ssl => {:ca_path => '/etc/ssl/certs'}}
+  end
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
