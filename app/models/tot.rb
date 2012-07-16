@@ -9,10 +9,16 @@ class Tot < ActiveRecord::Base
   
   # Image attachments via paperclip + s3
   attr_accessible :a_image, :b_image
-  has_attached_file :a_image, :styles => { :medium => "300x300>", :thumb => "100x100>" },
-    :dependent => :destroy
-  has_attached_file :b_image, :styles => { :medium => "300x300>", :thumb => "100x100>" },
-    :dependent => :destroy
+  has_attached_file :a_image,
+    :styles         => { :medium => "300x300>", :thumb => "100x100>" },
+    :storage        => :s3,
+    :s3_credentials => "#{::Rails.root}/config/s3.yml",
+    :dependent      => :destroy
+  has_attached_file :b_image,
+    :styles         => { :medium => "300x300>", :thumb => "100x100>" },
+    :storage        => :s3,
+    :s3_credentials => "#{::Rails.root}/config/s3.yml",
+    :dependent      => :destroy
   validates_attachment :a_image, :size => {:less_than => 5.megabytes}
   validates_attachment :b_image, :size => {:less_than => 5.megabytes}
   
