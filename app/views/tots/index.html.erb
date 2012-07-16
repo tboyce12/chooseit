@@ -5,8 +5,10 @@
 
 	<thead>
 		<tr>
+			<th><!-- Image --></th>
 			<th>This</th>
 			<th>Votes</th>
+			<th><!-- Image --></th>
 			<th>That</th>
 			<th>Votes</th>
 			<th><!--Show Link--></th>
@@ -17,8 +19,10 @@
 	<tbody>
 		<% @tots.each do |tot| %>
 			<tr>
+				<td><%= image_tag tot.a_image.url(:thumb) if tot.a_image_file_name %></td>
 				<td><%= tot.a %></td>
 				<td><%= tot.a_votes %></td>
+				<td><%= image_tag tot.b_image.url(:thumb) if tot.b_image_file_name %></td>
 				<td><%= tot.b %></td>
 				<td><%= tot.b_votes %></td>
 				<td><%= link_to 'Show', tots_show_path(tot) %></td>

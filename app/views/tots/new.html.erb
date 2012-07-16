@@ -1,6 +1,6 @@
 <h1>Create new choose-it</h1>
 
-<%= form_for(@tot, :url => tots_create_path) do |f| %>
+<%= form_for(@tot, :url => tots_create_path, :html => { :multipart => true }) do |f| %>
 	
 	<!--Server-side errors, if any-->
 	<% if @tot.errors.any? %>
@@ -17,9 +17,15 @@
 	<!--Form fields-->
 	<%= f.label :a, 'This text' %>
 	<%= f.text_field :a %><br/>
+	<%= f.label :a_image, 'This image' %>
+	<%= f.file_field :a_image %><br/>
+	<br/>
 	
 	<%= f.label :b, 'That text' %>
 	<%= f.text_field :b %><br/>
+	<%= f.label :b_image, 'That image' %>
+	<%= f.file_field :b_image %><br/>
+	<br/>
 	
 	<%= f.submit 'Create Choose It!'%><br/>
 	

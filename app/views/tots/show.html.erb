@@ -1,6 +1,11 @@
 <h1>Show Details</h1>
 
+<%= image_tag @tot.a_image.url(:medium) if @tot.a_image_file_name %><br/>
 <b><%= @tot.a %>:</b> <%= pluralize(@tot.a_votes, "vote") %><br/>
+<br/>
+
+<%= image_tag @tot.b_image.url(:medium) if @tot.b_image_file_name %><br/>
 <b><%= @tot.b %>:</b> <%= pluralize(@tot.b_votes, "vote") %><br/>
+<br/>
 
 <%= link_to 'Back', tots_index_path %>
