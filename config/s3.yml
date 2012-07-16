@@ -1,0 +1,12 @@
+development:
+  bucket: chooseit_assets_dev
+  access_key_id: AKIAISW2WTZFGPEOJTFA
+  secret_access_key: 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
+test:
+  bucket: chooseit_assets_test
+  access_key_id: AKIAISW2WTZFGPEOJTFA
+  secret_access_key: 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
+production:
+  bucket: chooseit_assets_pro
+  access_key_id: AKIAISW2WTZFGPEOJTFA
+  secret_access_key: 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
