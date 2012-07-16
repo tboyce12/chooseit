@@ -1,5 +1,5 @@
 class Tot < ActiveRecord::Base
-  attr_accessible :a, :a_image, :b, :b_image
+  attr_accessible :a, :b
   belongs_to :user
   has_many :votes, :dependent => :destroy
   

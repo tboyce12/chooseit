@@ -11,14 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120709183322) do
+ActiveRecord::Schema.define(:version => 20120716174030) do
 
   create_table "tots", :force => true do |t|
     t.integer  "user_id",    :null => false
     t.string   "a",          :null => false
     t.string   "b",          :null => false
-    t.string   "a_image"
-    t.string   "b_image"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
