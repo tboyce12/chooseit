@@ -9,24 +9,42 @@
 </head>
 <body>
 
+<div id="page">
 	<!-- Navigation Links -->
-	<div id="nav">
-		<ul id="nav-ul">
-			<%- if user_signed_in? -%>
-			<%= render 'layouts/links_signed_in' %>
-			<%- else -%>
-			<%= render 'layouts/links_signed_out' %>
-			<%- end -%>
-		</ul>
-	</div>
+	<div id="navbar">
+		<span class="inbar">
+			<ul>
+				<li>
+					<%= link_to image_tag('http://choose_it_public.s3.amazonaws.com/assets/root.png'), root_path %>
+				</li>
+				<%- if user_signed_in? -%>
+				<%= render 'layouts/links_signed_in' %>
+				<%- else -%>
+				<%= render 'layouts/links_signed_out' %>
+				<%- end -%>
+			</ul>
+		</span>
+	</div><!-- nav -->
 	<br/>
 
 	<!-- Flash Messages -->
-	<p class="notice"><%= notice %></p>
-	<p class="alert"><%= alert %></p>
+	<div id="flash">
+		<p class="notice"><%= notice %></p>
+		<p class="alert"><%= alert %></p>
+	</div><!-- flash -->
 
-	<br/>
+	<br/><br/>
+	<!-- Content -->
+	<div id="content">
 	<%= yield %>
+	</div><!-- content -->
+	<br/><br/>
+	
+	<!-- Footer Links -->
+	<div id="footer">
+		<%= link_to content_tag(:span, 'Contact Us!'), visitor_messages_new_path %>
+	</div><!-- footer -->
+</div><!-- page -->
 
 </body>
 </html>
