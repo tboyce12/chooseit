@@ -68,5 +68,9 @@ module Chooseit
       :user_name            => "info@chooseitgame.com",
       :password             => "test12test"
     }
+    
+    # Paperclip
+    config.gem 'paperclip'
+    
   end
 end
