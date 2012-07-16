@@ -21,6 +21,11 @@ class Tot < ActiveRecord::Base
     :dependent      => :destroy
   validates_attachment :a_image, :size => {:less_than => 5.megabytes}
   validates_attachment :b_image, :size => {:less_than => 5.megabytes}
+  before_post_process :check_file_size
+  def check_file_size
+    valid?
+    errors[:image_file_size].blank?
+  end
   
   # scope :not_created_by, lambda { |user| {:conditions => ["user_id <> ?", user.id]} }
   
