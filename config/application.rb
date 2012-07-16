@@ -69,7 +69,7 @@ module Chooseit
       :password             => "test12test"
     }
     
-    # Paperclip
+    # Paperclip (this may not actually be needed)
     config.gem 'paperclip'
     
   end
