@@ -11,14 +11,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120716174030) do
+ActiveRecord::Schema.define(:version => 20120716174636) do
 
   create_table "tots", :force => true do |t|
-    t.integer  "user_id",    :null => false
-    t.string   "a",          :null => false
-    t.string   "b",          :null => false
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "user_id",              :null => false
+    t.string   "a",                    :null => false
+    t.string   "b",                    :null => false
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+    t.string   "a_image_file_name"
+    t.string   "a_image_content_type"
+    t.integer  "a_image_file_size"
+    t.datetime "a_image_updated_at"
+    t.string   "b_image_file_name"
+    t.string   "b_image_content_type"
+    t.integer  "b_image_file_size"
+    t.datetime "b_image_updated_at"
   end
 
   create_table "users", :force => true do |t|

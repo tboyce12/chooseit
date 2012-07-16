@@ -7,6 +7,11 @@ class Tot < ActiveRecord::Base
   validates_length_of :a, :maximum => 30
   validates_length_of :b, :maximum => 30
   
+  # Image attachments via paperclip + s3
+  attr_accessible :a_image, :b_image
+  has_attached_file :a_image, :styles => { :medium => "300x300>", :thumb => "100x100>" }
+  has_attached_file :b_image, :styles => { :medium => "300x300>", :thumb => "100x100>" }
+  
   # scope :not_created_by, lambda { |user| {:conditions => ["user_id <> ?", user.id]} }
   
   # Methods for counting votes
