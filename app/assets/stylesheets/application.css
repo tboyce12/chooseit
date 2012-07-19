@@ -11,85 +11,63 @@
  *= require_self
  *= require_tree .
 */
-html, body {
-	text-align: center;
-}
-p {
-	text-align: left;
-}
+/* CSS Reset from http://developer.yahoo.com/yui/reset/ */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {margin:0;padding:0;}
+table {border-collapse:collapse;border-spacing:0;}
+fieldset,img {border:0;}
+address,caption,cite,code,dfn,em,strong,th,var {font-style:normal;font-weight:normal;}
+ol,ul {list-style:none;}
+caption,th {text-align:left;}
+h1,h2,h3,h4,h5,h6 {font-size:100%;font-weight:normal;}
+q:before,q:after {content:'';}
+abbr,acronym {border:0;}
+/* Begin My CSS */
 body {
-	margin: 0;
-	padding: 0;
-	background: #697281;
-	text-align: left;
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-	font-size: 13px;
-	color: #F1F5F8;
-	background-color:#888888;
+	background-color:black;
 }
-* {
-	margin: 0 auto 0 auto;
-	text-align:left;
+#container {
+	margin:20px auto;
+	border:5px solid #a0522d;
+	width:800px;
+	background-color:orange;
 }
-
-#page
-{
-  margin: 0 auto 0 auto;
-  margin-top:25px;
-  display: block;
-  height:auto;
-  position: relative;
-  overflow: hidden;
-  background: url(background.png) repeat-y;
-  width: 800px;
+#header {
+	border-bottom:5px solid #a0522d;
 }
-
-/*http://woork.blogspot.com/2008/02/elegant-navigation-bar-using-css.html*/
-#navbar{
-width:auto;
-height:36px;
-background:url(img/navbar-bg.png) left top repeat-x; }
-#navbar .inbar{
-display:block;
-height:36px;
-background:url(img/right-round.png) right top no-repeat; }
-#navbar ul, #navbar ul li{
-border:0px;
-margin:0px;
-padding:0px;
-list-style:none;
-height:36px;
-line-height:36px; } #navbar ul{
-background:url(img/left-round.png) left top no-repeat; } 
-#navbar ul li{
-float:left;
-display:block;
-line-height:36px; } 
-#navbar ul li a{
-color:#403e32;
-text-decoration:none;
-font-weight:bold;
-display:block; } 
-#navbar ul li a span{
-padding:0 20px 0 0;
-height:36px;
-line-height:36px;
-display:block;
-margin-left:20px; }
-#navbar .navhome a, #navbar .navhome a:hover{
-background:url(img/a-bg.png) left top no-repeat;
-height:36px;
-line-height:36px; } 
-#navbar .navhome a span, #navbar .navhome a:hover span{
-color:#FFFFFF;
-background:url(img/span-bg.png) right top no-repeat;
-height:36px;
-line-height:36px; } 
-#navbar ul li a:hover{
-background:url(img/ahover-bg.png) left top no-repeat;
-height:36px;
-line-height:36px; } 
-#navbar ul li a:hover span{
-background:url(img/spanhover-bg.png) right top no-repeat;
-height:36px;
-line-height:36px; }
+#header img {
+	vertical-align:top;
+}
+#menu {
+	background-color:#ff5500;
+	overflow:auto;
+}
+#menu li {
+	float:left;
+	width:200px;
+}
+#menu a {
+	display:block;
+	font-family:cursive;
+	font-weight:bold;
+	font-variant:small-caps;
+	color:#ffffff;
+	text-align:center;
+	text-decoration:none;
+	padding:10px;
+}
+#menu a:hover,a:active {
+	background-color:black;
+}
+#flash {
+	text-align:center;
+	color:white;
+}
+#flash p.notice {
+	background-color:green;
+}
+#flash p.alert {
+	background-color:red;
+}
+#flash p {
+	padding:5px;
+}
