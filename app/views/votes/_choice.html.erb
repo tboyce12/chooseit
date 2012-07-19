@@ -1,0 +1,17 @@
+<!-- <div class="choice" onclick="location.href='<%= votes_vote_path(@tot.id, choice) %>'"> -->
+<div class="choice">
+	<%= link_to votes_vote_path(@tot.id, choice), :method => :put do %>
+		<span></span>
+	<% end %>
+	<%- if choice.to_s == "a" -%>
+	<div>
+		<%= image_tag @tot.a_image.url(:medium) if @tot.a_image_file_name %>
+	</div>
+	<%= @tot.a %>
+	<%- else -%>
+	<div>
+		<%= image_tag @tot.b_image.url(:medium) if @tot.b_image_file_name %>
+	</div>
+	<%= @tot.b %>
+	<%- end -%>
+</div>

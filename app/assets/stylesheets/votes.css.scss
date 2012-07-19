@@ -1,3 +1,36 @@
 // Place all the styles related to the Votes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+div.choice {
+	display:inline-block;
+	vertical-align:middle;
+	text-align:center;
+	border:2px solid #ffffff;
+	position:relative;
+	margin:20px;
+	span {
+		position:absolute; 
+		width:100%;
+		height:100%;
+		top:0;
+		left: 0;
+		z-index: 1;
+		/* edit: fixes overlap error in IE7/8, 
+		make sure you have an empty gif */
+		background-image: url('http://choose_it_public.s3.amazonaws.com/assets/empty.gif');
+	}
+	div {
+		width:300px;
+		height:300px;
+		margin:2px;
+		line-height:296px; /*HACK*/
+		border:2px solid #ffffff;
+		background-color:#444444;
+		img {
+			vertical-align:middle;
+		}
+	}
+}
+div.choice:hover,div.choice:active {
+	background-color:blue;
+}

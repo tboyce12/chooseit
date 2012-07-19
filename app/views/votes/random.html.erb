@@ -1,8 +1,3 @@
 <h1>Vote on Choose-Its</h1>
 
-<%= image_tag @tot.a_image.url(:medium) if @tot.a_image_file_name %>
-<%= image_tag @tot.b_image.url(:medium) if @tot.b_image_file_name %>
-<br/>
-
-<%= link_to @tot.a, votes_vote_path(@tot.id, "a"), :method => :put %> or
-<%= link_to @tot.b, votes_vote_path(@tot.id, "b"), :method => :put %>
+<%= render "choice", :choice => :a %> OR <%= render "choice", :choice => :b %>

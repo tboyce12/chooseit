@@ -74,6 +74,11 @@ body {
 }
 #content {
 	padding:5px;
+	text-align:center;
+}
+h1 {
+	font-size:32px;
+	margin:10px;
 }
 #footer {
 	padding:5px;
