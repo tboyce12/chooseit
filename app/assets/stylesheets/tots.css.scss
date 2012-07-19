@@ -1,3 +1,45 @@
 // Place all the styles related to the Tots controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$thumb-size:64px;
+table.tots-center {
+	margin:auto;
+	border:2px solid #ffffff;
+	a {
+		color:#ffffff;
+	}
+	a:hover,a:active {
+		color:blue;
+	}
+	th {
+		padding:8px;
+		border-left:2px solid #ffffff;
+		border-bottom:2px solid #ffffff;
+	}
+	td {
+		border-bottom:1px solid #ffffff;
+		height:$thumb-size;
+		img {
+			display:block;
+		}
+		/*div {
+							width:$thumb-size;
+							height:$thumb-size;
+							a {
+								width:100%;
+								height:100%;
+								display:block;
+								text-decoration:none;
+								color:#ffffff;
+								vertical-align:middle;
+							}
+						}*/
+	}
+	td.tots-border-left {
+		border-left:1px solid #ffffff;
+	}
+	td.tots-padding {
+		padding:5px;
+	}
+	
+}

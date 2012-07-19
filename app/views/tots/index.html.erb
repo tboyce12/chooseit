@@ -1,7 +1,6 @@
-<h1>My Stuff</h1>
+<h1>My Choose-Its</h1>
 
-<h2>My Choose Its</h2>
-<table>
+<table class="tots-center">
 
 	<thead>
 		<tr>
@@ -19,14 +18,16 @@
 	<tbody>
 		<% @tots.each do |tot| %>
 			<tr>
+				<!-- <td><div><%= link_to (tot.a_image_file_name ? image_tag(tot.a_image.url(:thumb)) : ''), tots_show_path(tot) %></div></td> -->
+				<!-- <td><div><%= link_to tot.a, tots_show_path(tot) %></td> -->
 				<td><%= image_tag tot.a_image.url(:thumb) if tot.a_image_file_name %></td>
-				<td><%= tot.a %></td>
-				<td><%= tot.a_votes %></td>
-				<td><%= image_tag tot.b_image.url(:thumb) if tot.b_image_file_name %></td>
-				<td><%= tot.b %></td>
-				<td><%= tot.b_votes %></td>
-				<td><%= link_to 'Show', tots_show_path(tot) %></td>
-				<td><%= link_to 'Destroy', tots_destroy_path(tot), :method => :delete %></td>
+				<td class="tots-padding"><%= tot.a %></td>
+				<td class="tots-padding"><%= tot.a_votes %></td>
+				<td class="tots-border-left"><%= image_tag tot.b_image.url(:thumb) if tot.b_image_file_name %></td>
+				<td class="tots-padding"><%= tot.b %></td>
+				<td class="tots-padding"><%= tot.b_votes %></td>
+				<td class="tots-padding"><%= link_to 'Show', tots_show_path(tot) %></td>
+				<td class="tots-padding"><%= link_to 'Destroy', tots_destroy_path(tot), :method => :delete %></td>
 			</tr>
 		<% end %>
 	</tbody>
