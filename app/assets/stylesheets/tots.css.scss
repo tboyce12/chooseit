@@ -1,13 +1,19 @@
 // Place all the styles related to the Tots controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$thumb-size:64px;
+$white:#ffffff;
+$blue:blue;
+$table-border:5px solid $white;
+$cell-border:1px solid $white;
+$cell-width:160px;
+@mixin span-base {
+	display:block;
+	width:$cell-width;
+	text-align:center;
+	word-wrap:break-word;
+}
 .tots {
-	$thumb-size:64px;
-	$white:#ffffff;
-	$blue:blue;
-	$table-border:5px solid $white;
-	$cell-border:1px solid $white;
-	$cell-width:160px;
 	table {
 		margin:auto;
 		thead {
@@ -15,9 +21,7 @@
 			tr {
 				th {
 					span {
-						display:block;
-						width:$cell-width;
-						text-align:center;
+						@include span-base;
 					}
 				}
 			}
@@ -31,9 +35,7 @@
 						display:block;
 					}
 					span {
-						display:block;
-						width:$cell-width;
-						text-align:center;
+						@include span-base;
 					}
 				}
 				height:$thumb-size;
