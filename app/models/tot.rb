@@ -27,8 +27,6 @@ class Tot < ActiveRecord::Base
     errors[:image_file_size].blank?
   end
   
-  # scope :not_created_by, lambda { |user| {:conditions => ["user_id <> ?", user.id]} }
-  
   # Methods for counting votes
   def a_votes
     votes.where("votes.choice = 'a'").length
@@ -43,15 +41,13 @@ class Tot < ActiveRecord::Base
     not_touched_by(user).each do |tot|
       return tot if tot.id == id.to_i
     end
+    nil
   end
   
   # Find a random record that doesn't belong to user and hasn't been voted on by user
   def self.find_random_not_touched_by(user)
     tots = not_touched_by(user)
     tots[rand(tots.length)] unless tots.blank?
-    
-    # ids = connection.whereselect_all("SELECT id FROM tots WHERE )
-    # find(ids[rand(ids.length)]["id"].to_i) unless ids.blank?
   end
   
   # Find records that user doesn't own and hasn't voted on
@@ -65,6 +61,11 @@ class Tot < ActiveRecord::Base
       result.push tot unless vote
     end
     result
+  end
+  
+  # Find any random tot with no constraints
+  def self.find_random
+    self.offset(rand(self.count)).first
   end
   
 end
