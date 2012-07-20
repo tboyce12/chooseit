@@ -8,4 +8,4 @@
 <b><%= @tot.b %>:</b> <%= pluralize(@tot.b_votes, "vote") %><br/>
 <br/>
 
-<%= link_to 'Back', tots_index_path %>
+<%= link_to 'Destroy', tots_destroy_path(@tot), :method => :delete, :confirm => 'Are you sure? This cannot be undone.' %>

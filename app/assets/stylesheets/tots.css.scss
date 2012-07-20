@@ -1,45 +1,44 @@
 // Place all the styles related to the Tots controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-$thumb-size:64px;
-table.tots-center {
-	margin:auto;
-	border:2px solid #ffffff;
-	a {
-		color:#ffffff;
-	}
-	a:hover,a:active {
-		color:blue;
-	}
-	th {
-		padding:8px;
-		border-left:2px solid #ffffff;
-		border-bottom:2px solid #ffffff;
-	}
-	td {
-		border-bottom:1px solid #ffffff;
-		height:$thumb-size;
-		img {
-			display:block;
+.tots {
+	$thumb-size:64px;
+	$white:#ffffff;
+	$blue:blue;
+	$table-border:5px solid $white;
+	$cell-border:1px solid $white;
+	$cell-width:160px;
+	table {
+		margin:auto;
+		thead {
+			border-top:$table-border;
+			tr {
+				th {
+					span {
+						display:block;
+						width:$cell-width;
+						text-align:center;
+					}
+				}
+			}
+			border-bottom:$table-border;
 		}
-		/*div {
-							width:$thumb-size;
-							height:$thumb-size;
-							a {
-								width:100%;
-								height:100%;
-								display:block;
-								text-decoration:none;
-								color:#ffffff;
-								vertical-align:middle;
-							}
-						}*/
+		tbody {
+			border-bottom:$table-border;
+			tr {
+				td {
+					img {
+						display:block;
+					}
+					span {
+						display:block;
+						width:$cell-width;
+						text-align:center;
+					}
+				}
+				height:$thumb-size;
+				border-bottom:$cell-border;
+			}
+		}
 	}
-	td.tots-border-left {
-		border-left:1px solid #ffffff;
-	}
-	td.tots-padding {
-		padding:5px;
-	}
-	
 }
