@@ -23,14 +23,16 @@ q:before,q:after {content:'';}
 abbr,acronym {border:0;}
 /* Begin My CSS */
 body {
-	background-color:black;
+	background-image:url('http://choose_it_public.s3.amazonaws.com/assets/bg_tile.jpg');
+	background-attachment:fixed;
+/*	background-color:black;*/
 	color:white;
 }
 #container {
 	margin:20px auto;
 	border:5px solid #ffffff;
 	width:800px;
-	background-color:#666666;
+	background-color:rgba(96,96,96,0.98);
 }
 #header {
 	border-bottom:5px solid #ffffff;
@@ -39,7 +41,7 @@ body {
 	vertical-align:top;
 }
 #menu {
-	background-color:#444444;
+	background-color:rgba(0,0,0,0.5);
 	overflow:auto;
 }
 #menu li {
@@ -57,17 +59,19 @@ body {
 	padding:10px;
 }
 #menu a:hover,a:active {
-	background-color:black;
+	background-color:rgba(128,0,0,0.3);
 }
 #flash {
 	text-align:center;
 	color:white;
 }
 #flash p.notice {
-	background-color:green;
+	background-color:rgba(0,128,0,0.3);
+	font-weight:bold;
 }
 #flash p.alert {
-	background-color:red;
+	background-color:rgba(255,0,0,0.3);
+	font-weight:bold;
 }
 #flash p {
 	padding:5px;
