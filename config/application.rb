@@ -72,5 +72,8 @@ module Chooseit
     # Paperclip (this may not actually be needed)
     config.gem 'paperclip'
     
+    # Specify whether to use app-level debug features
+    config.app_debug = true
+    
   end
 end
