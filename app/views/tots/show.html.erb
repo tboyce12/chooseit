@@ -1,11 +1,31 @@
+<div class="tots" id="show">
+
 <h1>Show Details</h1>
 
-<%= image_tag @tot.a_image.url(:medium) if @tot.a_image_file_name %><br/>
-<b><%= @tot.a %>:</b> <%= pluralize(@tot.a_votes, "vote") %><br/>
-<br/>
+<div id="tots-choices">
+	<div class="tots-choice">
+		<div class="tots-choice-image">
+			<%= image_tag @tot.a_image.url(:medium) if @tot.a_image_file_name %>
+		</div>
+		<div class="tots-choice-text">
+			<strong><%= @tot.a %>:</strong> <%= pluralize(@tot.a_votes, "vote") %>
+		</div>
+	</div>
 
-<%= image_tag @tot.b_image.url(:medium) if @tot.b_image_file_name %><br/>
-<b><%= @tot.b %>:</b> <%= pluralize(@tot.b_votes, "vote") %><br/>
-<br/>
+	<div class="tots-or">OR</div>
 
-<%= link_to 'Destroy', tots_destroy_path(@tot), :method => :delete, :confirm => 'Are you sure? This cannot be undone.' %>
+	<div class="tots-choice">
+		<div class="tots-choice-image">
+			<%= image_tag @tot.b_image.url(:medium) if @tot.b_image_file_name %>
+		</div>
+		<div class="tots-choice-text">
+			<strong><%= @tot.b %>:</strong> <%= pluralize(@tot.b_votes, "vote") %>
+		</div>
+	</div>
+</div>
+
+<div id="tots-footer">
+	<%= link_to 'Destroy', tots_destroy_path(@tot), :method => :delete, :confirm => 'Are you sure? This cannot be undone.' %>
+</div>
+
+</div>
