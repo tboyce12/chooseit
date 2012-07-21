@@ -209,9 +209,11 @@ Devise.setup do |config|
   if Rails.env.production?
     # ChooseIt!
     config.omniauth :facebook, '153859971416055', '0121b071fed8246913acfd68ee2ffa5b', :client_options => {:ssl => {:ca_path => '/etc/ssl/certs'}}
+    config.omniauth :twitter, 'Fn0dnvNNgA77wuvCNRqtrA', 'WzNLjQQGWqPpXccuaqa9DQ5InxUHQjPsQhYsU2jIAs', :client_options => {:ssl => {:ca_path => '/etc/ssl/certs'}}
   else
     # tboyce-sandbox
     config.omniauth :facebook, '389463307778206', '9a009fa2b62ce4b270f3aa703612bc1b', :client_options => {:ssl => {:ca_path => '/etc/ssl/certs'}}
+    config.omniauth :twitter, 'n9aoiiwFRloBIqDBUZcNw', '3Y3QNZ9U3NnTIsoRJJmLo5eZRtDoo17Kw8ff1TDDvI', :client_options => {:ssl => {:ca_path => '/etc/ssl/certs'}}
   end
 
   # ==> Warden configuration

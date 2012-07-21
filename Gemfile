@@ -20,6 +20,7 @@ end
 # Authentication
 gem 'devise'
 gem 'omniauth-facebook'
+gem 'omniauth-twitter'
 
 # Image attachments
 gem "paperclip", "~> 3.0"

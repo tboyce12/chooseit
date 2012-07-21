@@ -25,7 +25,7 @@
 	<%- if provider.to_s.titleize == "Facebook" -%>
 	<%= link_to image_tag('http://choose_it_public.s3.amazonaws.com/assets/fb_button.png'), omniauth_authorize_path(resource_name, provider) %><br />
 	<%- else -%>
-    <%= link_to "Sign in with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider) %><br />
+    <%= link_to image_tag('http://s3.amazonaws.com/choose_it_public/assets/twitter_button.png'), omniauth_authorize_path(resource_name, provider) %><br />
 	<%- end -%>
 
   <% end -%>
