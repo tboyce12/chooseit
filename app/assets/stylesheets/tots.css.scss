@@ -21,6 +21,13 @@ $cell-width:160px;
 			tr {
 				th {
 					span {
+						font: {
+							size:20px;
+						}
+						margin: {
+							top:5px;
+							bottom:5px;
+						}
 						@include span-base;
 					}
 				}
