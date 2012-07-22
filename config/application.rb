@@ -73,7 +73,7 @@ module Chooseit
     config.gem 'paperclip'
     
     # Specify whether to use app-level debug features
-    config.app_debug = true
+    config.app_debug = ENV['CHOOSEIT_APP_DEBUG'] == 'true'
     
   end
 end
