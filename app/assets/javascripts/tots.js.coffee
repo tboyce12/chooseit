@@ -36,8 +36,10 @@ $ ->
 		
 	image_upload_success = (url, choice) ->
 		if choice == 'a'
+			$('#a_image_preview').empty()
 			$('#a_image_preview').append('<img src="'+url+'" alt="preview" />')
 		else
+			$('#b_image_preview').empty()
 			$('#b_image_preview').append('<img src="'+url+'" alt="preview" />')
 	
 	$('#upload_a_image').hide()

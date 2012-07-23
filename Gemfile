@@ -17,6 +17,9 @@ group :production do
   gem 'pg'
 end
 
+# Delayed Job
+gem 'delayed_job_active_record'
+
 # Authentication
 gem 'devise'
 gem 'omniauth-facebook'

@@ -1,9 +1,5 @@
 Chooseit::Application.routes.draw do
 
-  get "temp_files/create"
-
-  get "temp_files/destroy"
-
   post 'temp_files' => 'temp_files#create', :as => :temp_files_create
   
   get 'vote'             => 'votes#random', :as => :votes_random
