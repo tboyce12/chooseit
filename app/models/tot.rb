@@ -3,7 +3,7 @@ class Tot < ActiveRecord::Base
   belongs_to :user
   has_many :votes, :dependent => :destroy
   
-  validates_presence_of :a, :b
+  validates_presence_of :a, :b, :message => 'must include a description'
   validates_length_of :a, :maximum => 30
   validates_length_of :b, :maximum => 30
   

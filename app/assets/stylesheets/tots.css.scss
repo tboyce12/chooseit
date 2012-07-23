@@ -101,3 +101,57 @@ $tots-choice-border:2px solid $white;
 		};
 	}
 }
+#new {
+	h1 {
+		margin: {
+			top:15px;
+		};
+	}
+	#new-choices {
+		margin: {
+			top:20px;
+			bottom:20px;
+		}
+		.new-choice {
+			display:inline-block;
+			border:$tots-choice-border;
+			width:312px;
+			height:350px;
+			.new-choice-image {
+				line-height:296px; // HACK
+				img {
+					vertical-align:middle;
+				}
+				.new-thumb-text {
+					margin:auto;
+				}
+				border:$tots-choice-border;
+				position:relative;
+				width:300px;
+				height:300px;
+				top:4px;
+				left:4px;
+			}
+			.new-choice-image:hover {
+				border-color:$blue;
+				background-color:rgba(128,128,128,1.0);
+			}
+			.new-choice-text {
+				padding:5px;
+				word-wrap:break-word;
+				textarea {
+					resize:none;
+					width:300px;
+					height:31px;
+					margin-top:3px;
+				}
+			}
+		}
+		.new-or {
+			display:inline-block;
+			width:50px;
+			position:relative;
+			bottom:150px;
+		}
+	}
+}

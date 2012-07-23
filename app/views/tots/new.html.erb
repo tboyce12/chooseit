@@ -1,6 +1,8 @@
+<div id='new'>
+
 <h1>Create new choose-it</h1>
 
-<%= form_for(@tot, :url => tots_create_path, :html => { :multipart => true }) do |f| %>
+<%= form_for @tot, :url => tots_create_path, :html => { :multipart => true, :id => 'tot_form' } do |f| %>
 	
 	<!--Server-side errors, if any-->
 	<% if @tot.errors.any? %>
@@ -15,20 +17,38 @@
 	<% end %>
 	
 	<!--Form fields-->
-	<%= f.label :a, 'This text' %>
-	<%= f.text_field :a %><br/>
-	<%= f.label :a_image, 'This image' %>
-	<%= f.file_field :a_image %><br/>
-	<br/>
+	<div id='new-choices'>
+		<div class='new-choice'>
+			<div id='a_image_preview' class='new-choice-image'>
+				<div class='new-thumb-text'>
+					Click to choose an image...
+				</div>
+			</div>
+			<div class='new-choice-text'>
+				<%= f.text_area :a %>
+				<%= f.file_field :a_image, :id => :upload_a_image %>
+			</div>
+		</div>
+		
+		<div class="new-or">OR</div>
+
+		<div class='new-choice'>
+			<div id='b_image_preview' class='new-choice-image'>
+				<div class='new-thumb-text'>
+					Click to choose an image...
+				</div>
+			</div>
+			<div class='new-choice-text'>
+				<%= f.text_area :b %>
+				<%= f.file_field :b_image, :id => :upload_b_image %>
+			</div>
+		</div>
+	</div>
 	
-	<%= f.label :b, 'That text' %>
-	<%= f.text_field :b %><br/>
-	<%= f.label :b_image, 'That image' %>
-	<%= f.file_field :b_image %><br/>
-	<br/>
-	
-	<%= f.submit 'Create Choose It!'%><br/>
+	<%= f.submit 'Create Choose It!'%>
 	
 <% end %>
 
 <%= link_to 'Back', tots_index_path %>
+
+</div>
