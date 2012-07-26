@@ -23,6 +23,9 @@ $ ->
 	
 	# Resize images
 	# $('#a_resize,#b_resize,img.resize').load -> resize_img(this)
+	
+	# Click row in index table
+	$('tr.index_tot').click -> tr_clicked(this)
 
 chooseit_changed = (elem) ->
 	choice = if $(elem).attr('id') == 'a_image_text' then 'a' else 'b'
@@ -167,3 +170,8 @@ choose_by_file = (choice) ->
 submit_clicked = (elem) ->
 	$('#tot_form').submit()
 
+
+# INDEX
+tr_clicked = (elem) ->
+	id = elem.id
+	window.location.href = "/tots/#{id}"

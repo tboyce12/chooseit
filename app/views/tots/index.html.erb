@@ -11,19 +11,17 @@
 			<th><span>OR</span></th>
 			<th><span>That</span></th>
 			<th><!-- Image --></th>
-			<th><!--Show Link--></th>
 		</tr>
 	</thead>
 
 	<tbody>
 		<% @tots.each do |tot| %>
-			<tr>
+			<tr id='<%= tot.id %>' class='index_tot'>
 				<td><%= image_tag a_url(tot, 'thumb') %></td>
 				<td><span><%= tot.a %> (<%= pluralize(tot.a_votes, 'vote') %>)</span></td>
 				<td><span>OR</span></td>
 				<td><span><%= tot.b %> (<%= pluralize(tot.b_votes, 'vote') %>)</span></td>
 				<td><%= image_tag b_url(tot, 'thumb') %></td>
-				<td><%= link_to 'Show', tots_show_path(tot) %></td>
 			</tr>
 		<% end %>
 	</tbody>

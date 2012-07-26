@@ -50,6 +50,9 @@ $cell-width:160px;
 				height:$thumb-size;
 				border-bottom:$cell-border;
 			}
+			tr:hover {
+				background-color:$blue;
+			}
 		}
 	}
 }
@@ -138,10 +141,6 @@ $tots-choice-border:2px solid $white;
 					height:300px;
 					top:4px;
 					left:4px;
-				}
-				.new-choice-image:hover {
-					border-color:$blue;
-					background-color:rgba(128,128,128,1.0);
 				}
 				.new-choice-text {
 					padding:5px;
