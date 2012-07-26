@@ -18,11 +18,11 @@
 	<tbody>
 		<% @tots.each do |tot| %>
 			<tr>
-				<td><%= image_tag tot.a_image.url(:thumb) if tot.a_image_file_name %></td>
+				<td><%= image_tag a_url(tot, 'thumb') %></td>
 				<td><span><%= tot.a %> (<%= pluralize(tot.a_votes, 'vote') %>)</span></td>
 				<td><span>OR</span></td>
 				<td><span><%= tot.b %> (<%= pluralize(tot.b_votes, 'vote') %>)</span></td>
-				<td><%= image_tag tot.b_image.url(:thumb) if tot.b_image_file_name %></td>
+				<td><%= image_tag b_url(tot, 'thumb') %></td>
 				<td><%= link_to 'Show', tots_show_path(tot) %></td>
 			</tr>
 		<% end %>

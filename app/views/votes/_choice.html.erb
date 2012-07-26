@@ -4,12 +4,12 @@
 	<% end %>
 	<%- if choice.to_s == "a" -%>
 	<div>
-		<%= image_tag @tot.a_image.url(:medium) if @tot.a_image_file_name %>
+		<%= image_tag a_url(@tot, nil) %>
 	</div>
 	<%= @tot.a %>
 	<%- else -%>
 	<div>
-		<%= image_tag @tot.b_image.url(:medium) if @tot.b_image_file_name %>
+		<%= image_tag b_url(@tot, nil) %>
 	</div>
 	<%= @tot.b %>
 	<%- end -%>

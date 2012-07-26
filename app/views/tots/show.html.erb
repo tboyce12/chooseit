@@ -5,7 +5,7 @@
 <div id="tots-choices">
 	<div class="tots-choice">
 		<div class="tots-choice-image">
-			<%= image_tag @tot.a_image.url(:medium) if @tot.a_image_file_name %>
+			<%= image_tag a_url(@tot, nil), :id => :a_resize %>
 		</div>
 		<div class="tots-choice-text">
 			<strong><%= @tot.a %>:</strong> <%= pluralize(@tot.a_votes, "vote") %>
@@ -16,7 +16,7 @@
 
 	<div class="tots-choice">
 		<div class="tots-choice-image">
-			<%= image_tag @tot.b_image.url(:medium) if @tot.b_image_file_name %>
+			<%= image_tag b_url(@tot, nil), :id => :b_resize %>
 		</div>
 		<div class="tots-choice-text">
 			<strong><%= @tot.b %>:</strong> <%= pluralize(@tot.b_votes, "vote") %>

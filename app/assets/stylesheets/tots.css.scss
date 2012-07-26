@@ -40,6 +40,8 @@ $cell-width:160px;
 				td {
 					img {
 						display:block;
+						width:64px;
+						height:64px;
 					}
 					span {
 						@include span-base;
@@ -71,6 +73,8 @@ $tots-choice-border:2px solid $white;
 			.tots-choice-image {
 				line-height:296px; // HACK
 				img {
+					max-width:300px;
+					max-height:300px;
 					vertical-align:middle;
 				}
 				border:$tots-choice-border;
@@ -112,38 +116,42 @@ $tots-choice-border:2px solid $white;
 			top:20px;
 			bottom:20px;
 		}
-		.new-choice {
+		.new-choice-container {
 			display:inline-block;
-			border:$tots-choice-border;
-			width:312px;
-			height:350px;
-			.new-choice-image {
-				line-height:296px; // HACK
-				img {
-					vertical-align:middle;
-				}
-				.new-thumb-text {
-					margin:auto;
-				}
+			.new-choice {
 				border:$tots-choice-border;
-				position:relative;
-				width:300px;
-				height:300px;
-				top:4px;
-				left:4px;
-			}
-			.new-choice-image:hover {
-				border-color:$blue;
-				background-color:rgba(128,128,128,1.0);
-			}
-			.new-choice-text {
-				padding:5px;
-				word-wrap:break-word;
-				textarea {
-					resize:none;
+				width:312px;
+				height:350px;
+				.new-choice-image {
+					line-height:296px; // HACK
+					img {
+						vertical-align:middle;
+						max-width:300px;
+						max-height:300px;
+					}
+					.new-thumb-text {
+						margin:auto;
+					}
+					border:$tots-choice-border;
+					position:relative;
 					width:300px;
-					height:31px;
-					margin-top:3px;
+					height:300px;
+					top:4px;
+					left:4px;
+				}
+				.new-choice-image:hover {
+					border-color:$blue;
+					background-color:rgba(128,128,128,1.0);
+				}
+				.new-choice-text {
+					padding:5px;
+					word-wrap:break-word;
+					textarea {
+						resize:none;
+						width:300px;
+						height:31px;
+						margin-top:3px;
+					}
 				}
 			}
 		}
