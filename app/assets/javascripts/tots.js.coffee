@@ -129,7 +129,6 @@ fix_url = (img, choice, url, backupUrl) ->
 	# 	height = $(img).height()
 	# 	if width == 0 && height == 0
 	return if !backupUrl
-	alert 'using backup URL'
 	img.src = backupUrl
 	$("##{choice}_url_field").val(backupUrl)
 	
@@ -145,7 +144,7 @@ fix_url = (img, choice, url, backupUrl) ->
 # Clear all but URL field
 choose_by_url = (choice) ->
 	# Clear file field
-	$("#upload_#{choice}_image").replaceWith("<input type='file' id='upload_#{choice}_image' />")
+	$("#upload_#{choice}_image").replaceWith("<input type='file' id='upload_#{choice}_image' name='tot[#{choice}_image]' />")
 	$('#upload_a_image,#upload_b_image').change -> browse_changed(this)
 	# Clear google field
 	$("##{choice}_google_field").val('')
@@ -153,7 +152,7 @@ choose_by_url = (choice) ->
 # Clear all but google field
 choose_by_google = (choice) ->
 	#Clear file field
-	$("#upload_#{choice}_image").replaceWith("<input type='file' id='upload_#{choice}_image' />")
+	$("#upload_#{choice}_image").replaceWith("<input type='file' id='upload_#{choice}_image' name='tot[#{choice}_image]' />")
 	$('#upload_a_image,#upload_b_image').change -> browse_changed(this)
 	#Clear URL field
 	$("##{choice}_url_field").val('')
