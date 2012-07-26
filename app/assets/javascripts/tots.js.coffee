@@ -1,8 +1,19 @@
 # Place all the behaviors and hooks related to the matching controller here.
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
+
+# Load google image search API
+gReady = false
 imageSearch = null
+OnLoad = () ->
+	gReady = true
+google.setOnLoadCallback(OnLoad);
+google.load('search', '1');
+
+# Timer function
 delay = (ms, func) -> setTimeout func, ms
+
+# JQuery init objects
 $ ->
 	# Populate google field when text is changed
 	$('#a_image_text,#b_image_text').change -> chooseit_changed(this)
