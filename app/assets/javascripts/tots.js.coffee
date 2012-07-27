@@ -237,6 +237,7 @@ choose_by_url = (choice) ->
 	$('#upload_a_image,#upload_b_image').change -> browse_changed(this)
 	# Clear google field
 	$("##{choice}_google_field").val('')
+	$("##{choice}_more_results").empty()
 
 # Clear all but google field
 choose_by_google = (choice) ->
@@ -250,6 +251,7 @@ choose_by_google = (choice) ->
 choose_by_file = (choice) ->
 	# Clear google field
 	$("##{choice}_google_field").val('')
+	$("##{choice}_more_results").empty()
 	# Clear URL field
 	$("##{choice}_url_field").val('')
 
