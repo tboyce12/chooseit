@@ -160,8 +160,15 @@ $tots-choice-border:2px solid $white;
 			}
 			.new-choice-options {
 				margin-top:10px;
+				text-align:left;
 				.more_results {
 //					overflow:auto;
+				}
+				.text_field {
+					width:180px;
+				}
+				.button_tag {
+					width:80px;
 				}
 			}
 		}

@@ -31,12 +31,12 @@
 			<div class='new-choice-options'>
 				Select an image using one method below:
 				<br/>
-				<%= text_field_tag 'a_google_field', '', :id => :a_google_field %>
-				<%= button_tag :type => "button", :id => :a_google_button do content_tag(:span, 'Google') end %>
+				<%= text_field_tag 'a_google_field', '', :id => :a_google_field, :class => :text_field %>
+				<%= button_tag :type => "button", :id => :a_google_button, :class => :button_tag do content_tag(:span, 'Google') end %>
 				<div id='a_more_results' class='more_results'>
 				</div>
-				<%= f.text_field :a_url, :id => :a_url_field %>
-				<%= button_tag :type => "button", :id => :a_url_button do content_tag(:span, 'URL') end %>
+				<%= f.text_field :a_url, :id => :a_url_field, :class => :text_field %>
+				<%= button_tag :type => "button", :id => :a_url_button, :class => :button_tag do content_tag(:span, 'URL') end %>
 				<br/>
 				<%= f.file_field :a_image, :id => :upload_a_image %>
 			</div>
@@ -57,12 +57,12 @@
 			<div class='new-choice-options'>
 				Select an image using one method below:
 				<br/>
-				<%= text_field_tag 'b_google_field', '', :id => :b_google_field %>
-				<%= button_tag :type => "button", :id => :b_google_button do content_tag(:span, 'Google') end %>
+				<%= text_field_tag 'b_google_field', '', :id => :b_google_field, :class => :text_field %>
+				<%= button_tag :type => "button", :id => :b_google_button, :class => :button_tag do content_tag(:span, 'Google') end %>
 				<div id='b_more_results' class='more_results'>
 				</div>
-				<%= f.text_field :b_url, :id => :b_url_field %>
-				<%= button_tag :type => "button", :id => :b_url_button do content_tag(:span, 'URL') end %>
+				<%= f.text_field :b_url, :id => :b_url_field, :class => :text_field %>
+				<%= button_tag :type => "button", :id => :b_url_button, :class => :button_tag do content_tag(:span, 'URL') end %>
 				<br/>
 				<%= f.file_field :b_image, :id => :upload_b_image %>
 			</div>
