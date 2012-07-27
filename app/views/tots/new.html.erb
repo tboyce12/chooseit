@@ -5,16 +5,16 @@
 <%= form_for @tot, :url => tots_create_path, :html => { :multipart => true, :id => 'tot_form' } do |f| %>
 	
 	<!--Server-side errors, if any-->
-	<% if @tot.errors.any? %>
-		<div>
+	<div id='new-tot-errors'>
+		<% if @tot.errors.any? %>
 			<h2><%= pluralize(@tot.errors.count, "error") %> prohibited this choose-it from being saved:</h2>
 			<ul>
 				<% @tot.errors.full_messages.each do |msg| %>
 					<li><%= msg %></li>
 				<% end %>
 			</ul>
-		</div>
-	<% end %>
+		<% end %>
+	</div>
 	
 	<!--Form fields-->
 	<div id='new-choices'>
@@ -73,7 +73,9 @@
 	<%= button_tag :type => 'button', :id => :submit_button do content_tag(:span, 'Submit') end %>
 	
 <% end %>
+<br/>
+<%= link_to 'Back', tots_index_path %><br/><br/>
+(Image search powered by Google)
 
-<%= link_to 'Back', tots_index_path %>
 
 </div>

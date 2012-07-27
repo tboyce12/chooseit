@@ -114,6 +114,8 @@ $tots-choice-border:2px solid $white;
 			top:15px;
 		};
 	}
+	#new-tot-errors {
+	}
 	#new-choices {
 		margin: {
 			top:20px;
@@ -152,9 +154,10 @@ $tots-choice-border:2px solid $white;
 					word-wrap:break-word;
 					textarea {
 						resize:none;
-						width:300px;
+						width:298px;
 						height:31px;
-						margin-top:3px;
+						margin-top:2px;
+						border:$tots-choice-border;
 					}
 				}
 			}
@@ -162,7 +165,6 @@ $tots-choice-border:2px solid $white;
 				margin-top:10px;
 				text-align:left;
 				.more_results {
-//					overflow:auto;
 				}
 				.text_field {
 					width:180px;
@@ -177,8 +179,10 @@ $tots-choice-border:2px solid $white;
 			width:50px;
 			float:left;
 			margin-top:170px;
-//			position:relative;
-//			bottom:250px;
 		}
+	}
+	#submit_button {
+		width:150px;
+		height:40px;
 	}
 }

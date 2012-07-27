@@ -21,8 +21,8 @@ delay = (ms, func) -> setTimeout func, ms
 
 # JQuery init objects
 $ ->
-	# Populate google field when text is changed
-	$('#a_image_text,#b_image_text').change -> chooseit_changed(this)
+	# Reset border when text is changed
+	$('#a_image_text,#b_image_text').keyup -> chooseit_changed(this)
 	
 	# If browse, upload image then display it
 	$('#upload_a_image,#upload_b_image').change -> browse_changed(this)
@@ -64,6 +64,7 @@ $ ->
 
 chooseit_changed = (elem) ->
 	choice = if $(elem).attr('id') == 'a_image_text' then 'a' else 'b'
+	$("##{choice}_image_text").css('border', '2px solid white')
 
 browse_changed = (elem) ->
 	# Determine choice
@@ -255,8 +256,29 @@ choose_by_file = (choice) ->
 	# Clear URL field
 	$("##{choice}_url_field").val('')
 
+# Validate form, then submit if passed
 submit_clicked = (elem) ->
-	$('#tot_form').submit()
+	aText = $('#a_image_text')
+	bText = $('#b_image_text')
+	errors = new Array()
+	if aText.val() == ''
+		errors.push 'Left item needs a title or description<br/>'
+		aText.css('border-color','red')
+	if bText.val() == ''
+		errors.push 'Right item needs a title or description<br/>'
+		bText.css('border-color','red')
+	if errors.length == 0 
+		$('#tot_form').submit()
+	else
+		div = $('#new-tot-errors')
+		div.empty()
+		div.css('border','3px solid #ffff00')
+		div.css('background-color','#666600')
+		div.css('margin','auto')
+		div.css('padding','5px')
+		div.width(300)
+		for error in errors
+			div.append error
 
 
 # INDEX
