@@ -33,6 +33,9 @@
 				<%= text_field_tag 'a_google_field', '', :id => :a_google_field %>
 				<%= button_tag :type => "button", :id => :a_google_button do content_tag(:span, 'Google') end %>
 				<br/>
+				<div id='a_more_results'>
+				</div>
+				<br/>
 				<%= f.text_field :a_url, :id => :a_url_field %>
 				<%= button_tag :type => "button", :id => :a_url_button do content_tag(:span, 'URL') end %>
 				<br/>
@@ -56,6 +59,9 @@
 			<div class='new-choice-options'>
 				<%= text_field_tag 'b_google_field', '', :id => :b_google_field %>
 				<%= button_tag :type => "button", :id => :b_google_button do content_tag(:span, 'Google') end %>
+				<br/>
+				<div id='b_more_results'>
+				</div>
 				<br/>
 				<%= f.text_field :b_url, :id => :b_url_field %>
 				<%= button_tag :type => "button", :id => :b_url_button do content_tag(:span, 'URL') end %>

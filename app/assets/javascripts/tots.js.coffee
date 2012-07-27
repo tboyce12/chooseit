@@ -9,6 +9,8 @@ aResults = []
 bResults = []
 aIndex = 0
 bIndex = 0
+aMoreHref = ''
+bMoreHref = ''
 OnLoad = () ->
 	gReady = true
 google.setOnLoadCallback(OnLoad);
@@ -25,19 +27,18 @@ $ ->
 	# If browse, upload image then display it
 	$('#upload_a_image,#upload_b_image').change -> browse_changed(this)
 	
-	# If google, search for image then display it
-	# $('#a_google_field,#b_google_field').keydown -> google_changed(this)
-	# Get next result each time button is clicked
+	# Display next result each time google button is clicked
 	$('#a_google_button,#b_google_button').click (e) ->
 		choice = if this.id == 'a_google_button' then 'a' else 'b'
 		if choice == 'a' then a_google_clicked() else b_google_clicked()
-	# Pressing ENTER should also work
+	# Detect google field keypresses
 	$('#a_google_field,#b_google_field').keyup (e) ->
 		choice = if this.id == 'a_google_field' then 'a' else 'b'
-		# if e.which == 13 then setTimeout("google_clicked('#{choice}');", 3000)
+		# On ENTER, display result
 		if e.which == 13
 			if choice == 'a' then setTimeout(a_google_clicked, 0)
 			else setTimeout(b_google_clicked, 0)
+		# On other keys, perform a new search
 		else
 			if choice == 'a' then setTimeout(a_google_changed, 0)
 			else setTimeout(b_google_changed, 0)
@@ -118,6 +119,7 @@ google_changed = (elem) ->
 	# Perform google image search
 	imageSearch = new google.search.ImageSearch()
 	imageSearch.setSearchCompleteCallback(null, searchComplete, [choice])
+	imageSearch.setResultSetSize(8)
 	imageSearch.execute(query)
 	# google.search.Search.getBranding('branding')
 
@@ -134,9 +136,11 @@ searchComplete = (choice) ->
 		if choice == 'a'
 			aResults = myResults
 			aIndex = 0
+			aMoreHref = imageSearch.cursor.moreResultsUrl
 		else
 			bResults = myResults
 			bIndex = 0
+			bMoreHref = imageSearch.cursor.moreResultsUrl
 		
 		# # Get result URL
 		# 		result = imageSearch.results[0]
@@ -160,11 +164,21 @@ google_clicked = (choice) ->
 	result = null
 	if choice == 'a'
 		return if aResults.length == 0
+		# On first result, display link for all results
+		if aIndex == 0
+			div = $('#a_more_results')
+			div.empty()
+			div.append("<a target='_blank' href='#{aMoreHref}'>Click to view all results</a>")
 		result = aResults[aIndex]
 		aIndex++
 		if aIndex >= aResults.length then aIndex = 0
 	else
 		return if bResults.length == 0
+		# On first result, display link for all results
+		if bIndex == 0
+			div = $('#b_more_results')
+			div.empty()
+			div.append("<a target='_blank' href='#{bMoreHref}'>Click to view all results</a>")
 		result = bResults[bIndex]
 		bIndex++
 		if bIndex >= bResults.length then bIndex = 0
