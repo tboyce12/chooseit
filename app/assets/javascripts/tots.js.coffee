@@ -42,6 +42,8 @@ $ ->
 		else
 			if choice == 'a' then setTimeout(a_google_changed, 0)
 			else setTimeout(b_google_changed, 0)
+	# Initially hide more results links
+	# $('#a_more_results,#b_more_results').hide()
 	
 	# If URL, display image
 	$('#a_url_field,#b_url_field').change -> url_changed(this)
@@ -54,6 +56,11 @@ $ ->
 	
 	# Click row in index table
 	$('tr.index_tot').click -> tr_clicked(this)
+	
+	# Apply watermarks
+	$('#a_image_text,#b_image_text').watermark('Enter a title or description...')
+	$('#a_google_field,#b_google_field').watermark('Search')
+	$('#a_url_field,#b_url_field').watermark('Paste image URL')
 
 chooseit_changed = (elem) ->
 	choice = if $(elem).attr('id') == 'a_image_text' then 'a' else 'b'

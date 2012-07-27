@@ -22,7 +22,6 @@
 			<div class='new-choice'>
 				<div id='a_image_preview' class='new-choice-image'>
 					<div class='new-thumb-text'>
-						Click to choose an image...
 					</div>
 				</div>
 				<div class='new-choice-text'>
@@ -30,12 +29,12 @@
 				</div>
 			</div>
 			<div class='new-choice-options'>
+				Select an image using one method below:
+				<br/>
 				<%= text_field_tag 'a_google_field', '', :id => :a_google_field %>
 				<%= button_tag :type => "button", :id => :a_google_button do content_tag(:span, 'Google') end %>
-				<br/>
-				<div id='a_more_results'>
+				<div id='a_more_results' class='more_results'>
 				</div>
-				<br/>
 				<%= f.text_field :a_url, :id => :a_url_field %>
 				<%= button_tag :type => "button", :id => :a_url_button do content_tag(:span, 'URL') end %>
 				<br/>
@@ -49,7 +48,6 @@
 			<div class='new-choice'>
 				<div id='b_image_preview' class='new-choice-image'>
 					<div class='new-thumb-text'>
-						Click to choose an image...
 					</div>
 				</div>
 				<div class='new-choice-text'>
@@ -57,12 +55,12 @@
 				</div>
 			</div>
 			<div class='new-choice-options'>
+				Select an image using one method below:
+				<br/>
 				<%= text_field_tag 'b_google_field', '', :id => :b_google_field %>
 				<%= button_tag :type => "button", :id => :b_google_button do content_tag(:span, 'Google') end %>
-				<br/>
-				<div id='b_more_results'>
+				<div id='b_more_results' class='more_results'>
 				</div>
-				<br/>
 				<%= f.text_field :b_url, :id => :b_url_field %>
 				<%= button_tag :type => "button", :id => :b_url_button do content_tag(:span, 'URL') end %>
 				<br/>

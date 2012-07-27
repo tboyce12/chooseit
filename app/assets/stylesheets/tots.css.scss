@@ -119,8 +119,13 @@ $tots-choice-border:2px solid $white;
 			top:20px;
 			bottom:20px;
 		}
+		overflow:auto;
+		.new-choice-container:first-of-type {
+			margin-left:59px;
+		}
 		.new-choice-container {
-			display:inline-block;
+			display:block;
+			float:left;
 			.new-choice {
 				border:$tots-choice-border;
 				width:312px;
@@ -153,12 +158,20 @@ $tots-choice-border:2px solid $white;
 					}
 				}
 			}
+			.new-choice-options {
+				margin-top:10px;
+				.more_results {
+//					overflow:auto;
+				}
+			}
 		}
 		.new-or {
-			display:inline-block;
+			display:block;
 			width:50px;
-			position:relative;
-			bottom:150px;
+			float:left;
+			margin-top:170px;
+//			position:relative;
+//			bottom:250px;
 		}
 	}
 }
