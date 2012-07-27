@@ -5,6 +5,10 @@
 # Load google image search API
 gReady = false
 imageSearch = null
+aResults = []
+bResults = []
+aIndex = 0
+bIndex = 0
 OnLoad = () ->
 	gReady = true
 google.setOnLoadCallback(OnLoad);
@@ -22,9 +26,21 @@ $ ->
 	$('#upload_a_image,#upload_b_image').change -> browse_changed(this)
 	
 	# If google, search for image then display it
-	$('#a_google_field,#b_google_field').change -> google_changed(this)
+	# $('#a_google_field,#b_google_field').keydown -> google_changed(this)
 	# Get next result each time button is clicked
-	$('#a_google_button,#b_google_button').click -> google_clicked(this)
+	$('#a_google_button,#b_google_button').click (e) ->
+		choice = if this.id == 'a_google_button' then 'a' else 'b'
+		if choice == 'a' then a_google_clicked() else b_google_clicked()
+	# Pressing ENTER should also work
+	$('#a_google_field,#b_google_field').keyup (e) ->
+		choice = if this.id == 'a_google_field' then 'a' else 'b'
+		# if e.which == 13 then setTimeout("google_clicked('#{choice}');", 3000)
+		if e.which == 13
+			if choice == 'a' then setTimeout(a_google_clicked, 0)
+			else setTimeout(b_google_clicked, 0)
+		else
+			if choice == 'a' then setTimeout(a_google_changed, 0)
+			else setTimeout(b_google_changed, 0)
 	
 	# If URL, display image
 	$('#a_url_field,#b_url_field').change -> url_changed(this)
@@ -92,6 +108,8 @@ url_changed = (elem) ->
 	# Clear browse input
 	choose_by_url(choice)
 
+a_google_changed = () -> google_changed($('#a_google_field'))
+b_google_changed = () -> google_changed($('#b_google_field'))
 google_changed = (elem) ->
 	return if !gReady
 	# Determine choice and query
@@ -103,20 +121,56 @@ google_changed = (elem) ->
 	imageSearch.execute(query)
 	# google.search.Search.getBranding('branding')
 
+# Load results
 # Set the URL field for a completed image search
 searchComplete = (choice) ->
 	if (imageSearch.results && imageSearch.results.length > 0)
-		# Get result URL
-		result = imageSearch.results[0]
-		# Only use first result for now
-		url = result.url
-		tbUrl = result.tbUrl
-		# Display URL
-		choose_by_google(choice)
-		display_image(url, choice, tbUrl)
+		# Build myResults array
+		myResults = new Array()
+		for result in imageSearch.results
+			myResult = {'url':result.url, 'tbUrl':result.tbUrl}
+			myResults.push myResult
+		# Save myResults in aResults or bResults, reset index
+		if choice == 'a'
+			aResults = myResults
+			aIndex = 0
+		else
+			bResults = myResults
+			bIndex = 0
 		
-google_clicked = (elem) ->
-	choice = if $(elem).attr('id') == 'a_google_button' then 'a' else 'b'
+		# # Get result URL
+		# 		result = imageSearch.results[0]
+		# 		# Only use first result for now
+		# 		url = result.url
+		# 		tbUrl = result.tbUrl
+		# 		# Display URL
+		# 		choose_by_google(choice)
+		# 		display_image(url, choice, tbUrl)
+
+a_google_clicked = () -> google_clicked('a')
+b_google_clicked = () -> google_clicked('b')
+google_clicked = (choice) ->
+	# choice = null
+	# 	if $(elem).attr('id') == 'a_google_button' || $(elem).attr('id') == 'a_google_field'
+	# 		choice = 'a'
+	# 	else
+	# 		choice = 'b'
+	# choice = if $(elem).attr('id') == 'a_google_button' then 'a' else 'b'
+	# Get result, cycle index
+	result = null
+	if choice == 'a'
+		return if aResults.length == 0
+		result = aResults[aIndex]
+		aIndex++
+		if aIndex >= aResults.length then aIndex = 0
+	else
+		return if bResults.length == 0
+		result = bResults[bIndex]
+		bIndex++
+		if bIndex >= bResults.length then bIndex = 0
+	# Display result
+	choose_by_google(choice)
+	display_image(result['url'], choice, result['tbUrl'])
 
 # Display specified image by URL and choice
 display_image = (url, choice, backupUrl) ->
