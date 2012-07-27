@@ -45,13 +45,17 @@ $cell-width:160px;
 					}
 					span {
 						@include span-base;
+						font-variant:small-caps;
+					}
+					span.colorized {
+						color:#ff8888;
 					}
 				}
 				height:$thumb-size;
 				border-bottom:$cell-border;
 			}
 			tr:hover {
-				background-color:$blue;
+				background-color:rgba(128,0,0,0.3);
 			}
 		}
 	}

@@ -23,10 +23,11 @@ q:before,q:after {content:'';}
 abbr,acronym {border:0;}
 /* Begin My CSS */
 body {
-	background-image:url('http://choose_it_public.s3.amazonaws.com/assets/bg_tile.jpg');
-	background-attachment:fixed;
-/*	background-color:black;*/
+	/*background-image:url('http://choose_it_public.s3.amazonaws.com/assets/bg_tile.jpg');
+		background-attachment:fixed;*/
+	background-color:black;
 	color:white;
+	font-family:"Lucida Sans Unicode","Lucida Grande",sans-serif;
 }
 #container {
 	margin:20px auto;
@@ -50,7 +51,7 @@ body {
 }
 #menu a {
 	display:block;
-	font-family:cursive;
+/*	font-family:cursive;*/
 	font-weight:bold;
 	font-variant:small-caps;
 	color:#ffffff;

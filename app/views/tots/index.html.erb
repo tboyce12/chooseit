@@ -7,9 +7,9 @@
 	<thead>
 		<tr>
 			<th><!-- Image --></th>
-			<th><span>This</span></th>
-			<th><span>OR</span></th>
-			<th><span>That</span></th>
+			<th><span>THIS</span></th>
+			<th><span>or</span></th>
+			<th><span>THAT</span></th>
 			<th><!-- Image --></th>
 		</tr>
 	</thead>
@@ -18,9 +18,9 @@
 		<% @tots.each do |tot| %>
 			<tr id='<%= tot.id %>' class='index_tot'>
 				<td><%= image_tag a_url(tot, 'thumb') %></td>
-				<td><span><%= tot.a %> (<%= pluralize(tot.a_votes, 'vote') %>)</span></td>
-				<td><span>OR</span></td>
-				<td><span><%= tot.b %> (<%= pluralize(tot.b_votes, 'vote') %>)</span></td>
+				<td><span><%= tot.a %></span><span class='colorized'>(<%= pluralize(tot.a_votes, 'vote') %>)</span></td>
+				<td><span>or</span></td>
+				<td><span><%= tot.b %></span><span class='colorized'>(<%= pluralize(tot.b_votes, 'vote') %>)</span></td>
 				<td><%= image_tag b_url(tot, 'thumb') %></td>
 			</tr>
 		<% end %>
