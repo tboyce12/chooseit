@@ -1,7 +1,5 @@
 <div class="tots" id="show">
 
-<h1>Show Details</h1>
-
 <div id="tots-choices">
 	<div class="tots-choice">
 		<div class="tots-choice-image">
@@ -25,7 +23,7 @@
 </div>
 
 <div id="tots-footer">
-	<%= link_to 'Destroy', tots_destroy_path(@tot), :method => :delete, :confirm => 'Are you sure? This cannot be undone.' %>
+	<%= link_to 'Delete', tots_destroy_path(@tot), :method => :delete, :confirm => 'Are you sure you want to delete this Choose It? This cannot be undone.' %>
 </div>
 
 </div>
