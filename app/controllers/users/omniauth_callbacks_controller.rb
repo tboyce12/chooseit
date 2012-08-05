@@ -90,7 +90,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         # Service linked to user
         # Do nothing
         # Redirect to account page
-        flash[:notice] = "#{kind} is already added"
+        flash[:notice] = "#{kind} is already linked"
         redirect_to edit_user_registration_path
       else
         # Service is not linked to user
