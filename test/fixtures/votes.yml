@@ -1,11 +1,12 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  user_id: 1
-  tot_id: 1
-  choice: MyString
+# one:
+#   user_id: 1
+#   tot_id: 1
+#   choice: MyString
+# 
+# two:
+#   user_id: 1
+#   tot_id: 1
+#   choice: MyString
 
-two:
-  user_id: 1
-  tot_id: 1
-  choice: MyString

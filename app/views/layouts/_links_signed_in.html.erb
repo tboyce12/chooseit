@@ -9,9 +9,5 @@
 <%= link_to content_tag(:span, current_user.email), edit_user_registration_path %>
 </li>
 <li>
-<%- if user_omniauth_signed_in? -%>
-	<%= link_to content_tag(:span, 'Logout'), destroy_user_session_omniauth_path, :method => :delete %>
-	<%- else -%>
-	<%= link_to content_tag(:span, 'Logout'), destroy_user_session_path, :method => :delete %>
-	<%- end -%>
+<%= link_to content_tag(:span, 'Logout'), destroy_user_session_path, :method => :delete %>
 </li>

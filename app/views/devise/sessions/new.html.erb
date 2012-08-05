@@ -13,6 +13,10 @@
 			  <%= link_to image_tag('http://choose_it_public.s3.amazonaws.com/assets/fb_button.png'), omniauth_authorize_path(resource_name, provider) %>
 			  <%- elsif provider.to_s.titleize == "Twitter"-%>
 			  <%= link_to image_tag('http://s3.amazonaws.com/choose_it_public/assets/twitter_button.png'), omniauth_authorize_path(resource_name, provider) %>
+			  <%- elsif provider.to_s == "google_oauth2"%>
+			  <%= link_to image_tag('http://s3.amazonaws.com/choose_it_public/assets/google_button.png'), omniauth_authorize_path(resource_name, provider) %>
+			  <%- else -%>
+			  <%= link_to provider.to_s.titleize, omniauth_authorize_path(resource_name, provider) %>
 			  <%- end -%>
 			</div>
 

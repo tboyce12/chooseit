@@ -24,6 +24,7 @@ gem 'delayed_job_active_record'
 gem 'devise'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
+gem 'omniauth-google-oauth2'
 
 # Image attachments
 gem "paperclip", "~> 3.0"
