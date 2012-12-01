@@ -65,6 +65,20 @@ class User < ActiveRecord::Base
     end
   end
   
+  # Override this Devise method so that it will set haslocalpw to true when resetting a user's password
+  def reset_password!(new_password, new_password_confirmation)
+    self.password = new_password
+    self.password_confirmation = new_password_confirmation
+    self.haslocalpw = true # Added this line
+
+    if valid?
+      clear_reset_password_token
+      after_password_reset
+    end
+
+    save
+  end
+  
   protected
   def password_required?
     haslocalpw
