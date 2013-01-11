@@ -27,7 +27,7 @@ gem 'omniauth-twitter'
 gem 'omniauth-google-oauth2'
 
 # Image attachments
-gem "paperclip", "~> 3.0"
+gem "paperclip", "~> 3.1.4"
 gem 'aws-sdk'
 
 # Gems used only for assets and not required
